@@ -1,0 +1,239 @@
+/* Sidebar styles */
+.sidebar {
+  width: 18%; /* Adjusted width for 100% zoom for a smaller default sidebar */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.05); /* Light shadow */
+  border-right: 1px solid #e5e9f2; /* Right border for separation */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Space between logo, menu, and user info */
+  position: fixed; /* Fixed position */
+  top: 0; /* Start at the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it's above other content */
+  overflow-y: auto; /* Enable vertical scrolling */
+  transition: width 0.3s ease-in-out; /* Smooth width transition */
+}
+
+/* Logo container adjustments */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 30px; /* Add padding on top, left-right, and extra on the bottom */
+}
+
+.navbar-logo {
+  width: 100%;
+  height: auto;
+  max-height: 60px; /* Adjust based on your design preference */
+  aspect-ratio: 4 / 1; /* Ensures the 4:1 ratio is maintained */
+  object-fit: contain; /* Ensures the logo scales correctly within its container */
+  border-radius: 10px;
+  padding-bottom: 10px; /* Optional */
+}
+
+.ui .vertical .menu{
+  width: 18% !important;
+}
+/* Menu item styles */
+.sidebar .navbar-menu {
+  flex-grow: 1; /* Allow menu to grow in height */
+}
+
+.sidebar .navbar-menu .title {
+  padding: 15px 20px; /* More padding for better spacing */
+  font-size: 1.15rem;
+  color: #333; /* Dark text color */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  border-radius: 8px; /* Rounded corners for hover effect */
+  margin-bottom: 10px; /* Add spacing between items */
+  display: block; /* Ensure items are block-level elements */
+}
+
+.sidebar .item {
+  font-size: 1.3rem; /* Increase font size for menu items */
+  padding: 18px 4px; /* Increase padding for better spacing */
+}
+
+.sidebar .item:hover {
+  background-color: #f0f0f5; /* Light background on hover */
+}
+
+.sidebar .item.active {
+  background-color: #e5e9f2; /* Active item background */
+  font-weight: 600; /* Bold text for active items */
+  color: #4a90e2; /* Active item text color */
+}
+
+/* User Info Section */
+.user-info {
+  background-color: #ffffff23;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(158, 202, 101);
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Add horizontal divider when the logout button is visible */
+.user-info.expanded {
+  border-bottom: 1px solid #d9d9d9; /* Divider line */
+  margin-bottom: 10px; /* Space between the user info and the logout button */
+}
+
+.profile-details {
+  display: flex;
+  align-items: center; /* Align profile photo and text vertically */
+  margin-top: 2px;
+  margin-bottom: 10px; /* Space between profile details and the logout button */
+}
+
+.profile-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  background-color: #cbd2d6a4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px; /* Spacing between photo and text */
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align username and role within the height of the profile photo */
+}
+
+.user-name {
+  font-size: 20px; /* Adjust the font size */
+  font-weight: bold;
+  white-space: nowrap; /* Prevents the username from wrapping to the next line */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Adds '...' to indicate overflowing text */
+  max-width: 150px; /* Limit the width of the username to keep it within the sidebar */
+  margin-top: 1px;
+  margin-bottom: 2px;
+  color: #211e1e;
+}
+
+.role-tag {
+  display: inline-block; /* Inline-block for tag */
+  padding: 4px 8px; /* Padding for the tag */
+  font-size: 0.9rem; /* Smaller font size for the tag */
+  color: #ffffff; /* White text */
+  border-radius: 12px; /* Rounded corners for the tag */
+  text-transform: capitalize; /* Capitalize the text */
+}
+
+/* Add specific styles for different roles */
+.role-tag.bizops {
+  width: fit-content;
+  background-color: #4a90e2; /* Blue background for BizOps */
+}
+
+.role-tag.leader {
+  width: fit-content;
+  background-color: orange; /* Orange background for Leader */
+}
+
+.logout-container {
+  text-align: center;
+}
+
+hr {
+  opacity: 0.4; /* Semi-transparent divider */
+  border-color: rgba(138, 138, 155, 0.474); /* Border color */
+}
+
+.logout-button {
+  background-color: #b9574e !important;
+  color: white !important; /* Ensure text is white for contrast */
+  border: none;
+  margin: 0 auto; /* Center the logout button */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+
+/* For tablet devices and small screens */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 30%; /* Increase sidebar width on tablets */
+  }
+
+  .navbar-logo {
+    max-height: 50px;
+  }
+
+  .sidebar .item {
+    font-size: 1rem; /* Reduce font size for menu items */
+  }
+
+  .profile-photo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-name {
+    font-size: 18px;
+    max-width: 100px; /* Adjust username width on smaller screens */
+  }
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 480px) {
+  .sidebar {
+    width: 40%; /* Even wider sidebar on mobile screens */
+  }
+
+  .navbar-logo {
+    width: 40px
+  }
+
+  .sidebar .item {
+    font-size: 0.9rem; /* Further reduce font size */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .profile-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user-name {
+    font-size: 16px;
+    max-width: 90px; /* Limit the width for smaller screens */
+  }
+}
+
+/* For extra small devices (like iPhones) */
+@media only screen and (max-width: 320px) {
+  .sidebar {
+    width: 50%; /* Narrowest sidebar for very small devices */
+  }
+
+  .navbar-logo {
+    width: 35px;
+  }
+
+  .sidebar .item {
+    font-size: 0.8rem; /* Smallest font size */
+    padding: 8px 12px;
+  }
+
+  .profile-photo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-name {
+    font-size: 14px;
+    max-width: 80px; /* Limit the width for very small screens */
+  }
+}

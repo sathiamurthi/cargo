@@ -1,0 +1,18 @@
+/* styles.css */
+
+.product-grid {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if there are too many */
+    gap: 16px; /* Space between items */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.product-card {
+    flex: 1 1 calc(25% - 16px); /* Make each card take approximately 25% of the width minus gaps for 4 in a row */
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 8px; /* Margin around each product card */
+}

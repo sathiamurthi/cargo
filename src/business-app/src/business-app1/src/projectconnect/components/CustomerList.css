@@ -1,0 +1,25 @@
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* src/components/CustomerList.css */
+/* src/components/CustomerList.css */
+.scrollable-grid {
+    max-height: 70vh; /* 70% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin-bottom: 20px; /* Optional: add spacing to bottom */
+}
+
+/* Optional: Add padding for mobile view */
+@media only screen and (max-width: 768px) {
+    .scrollable-grid {
+        max-height: 50vh; /* Less height for smaller screens */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .scrollable-grid {
+        max-height: 800px; /* Adjust height for smaller screens */
+    }
+}
