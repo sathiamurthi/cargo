@@ -1,0 +1,9 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ApplicationDashboard from './ApplicationDashboard';
+
+const Appcopy1 = () => (
+    <Router>
+        <Route path="/" component={ApplicationDashboard} />
+    </Router>
+);
+export default Appcopy1;
